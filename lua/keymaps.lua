@@ -34,6 +34,12 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Move lines up and down just like in VS Code
+vim.keymap.set('n', '<A-Up>', ':m -2<CR>', { desc = 'Move current line up by one' })
+vim.keymap.set('v', '<A-Up>', ':m -2<CR>', { desc = 'Move current line up by one' })
+vim.keymap.set('n', '<A-Down>', ':m +1<CR>', { desc = 'Move current line down by one' })
+vim.keymap.set('v', '<A-Down>', ':m -2<CR>', { desc = 'Move current line down by one' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

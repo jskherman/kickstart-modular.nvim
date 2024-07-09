@@ -183,6 +183,19 @@ return {
             },
           },
         },
+
+        -- Python LSP: ruff_lsp
+        ruff_lsp = {},
+        -- Python Linter: ruff
+        ruff = {},
+
+        -- Typst LSP: tinymist
+        tinymist = {
+          settings = {
+            exportPdf = 'onDocumentHasTitle', -- either: 'auto', 'onSave', 'onType', 'onDocumentHasTitle'
+            outputPath = '$root/output/$name',
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
