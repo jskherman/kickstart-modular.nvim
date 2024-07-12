@@ -189,8 +189,21 @@ return {
         -- Python Linter: ruff
         ruff = {},
 
+        -- -- Typst LSP
+        -- typst_lsp = {
+        --   settings = {
+        --     exportPdf = 'onType',
+        --   },
+        -- },
+
         -- Typst LSP: tinymist
         tinymist = {
+          filetypes = { 'typst' },
+          --- TODO: these configuration from lspconfig maybe broken
+          -- single_file_support = true,
+          root_dir = function()
+            return vim.fn.getcwd()
+          end,
           settings = {
             exportPdf = 'onDocumentHasTitle', -- either: 'auto', 'onSave', 'onType', 'onDocumentHasTitle'
             outputPath = '$root/output/$name',
