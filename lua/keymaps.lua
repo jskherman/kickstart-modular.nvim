@@ -40,6 +40,9 @@ vim.keymap.set('v', '<A-Up>', ':m -2<CR>', { desc = 'Move current line up by one
 vim.keymap.set('n', '<A-Down>', ':m +1<CR>', { desc = 'Move current line down by one' })
 vim.keymap.set('v', '<A-Down>', ':m -2<CR>', { desc = 'Move current line down by one' })
 
+-- Keymap to determine filetype of file in current buffer
+vim.keymap.set('n', '<leader>df', '<cmd>echo "File type: " .. &filetype<CR>', { desc = 'Show filetype of file' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

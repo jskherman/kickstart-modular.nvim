@@ -95,6 +95,7 @@ vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 require 'options'
+require 'neovide-opts'
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
