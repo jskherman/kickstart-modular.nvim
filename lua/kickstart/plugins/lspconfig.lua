@@ -158,7 +158,6 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -184,10 +183,29 @@ return {
           },
         },
 
-        -- Python LSP: ruff_lsp
-        ruff_lsp = {},
-        -- Python Linter: ruff
-        ruff = {},
+        -- Python
+        ruff_lsp = {
+          on_attach = function(client, _)
+            client.server_capabilities.hoverProvider = false
+          end,
+        },
+        -- ruff = {},
+
+        pyright = {
+          capabilities = vim.lsp.protocol.make_client_capabilities(),
+          settings = {
+            python = {
+              analysis = {
+                disableOrganizeImports = false,
+                useLibraryCodeForTypes = true,
+                diagnosticSeverityOverrides = {
+                  reportUnusedVariable = 'warning', -- or anything
+                },
+                typeCheckingMode = 'basic',
+              },
+            },
+          },
+        },
 
         -- -- Typst LSP
         -- typst_lsp = {
