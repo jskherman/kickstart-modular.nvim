@@ -24,7 +24,7 @@ if vim.g.neovide then
   -- vim.api.nvim_set_keymap('v', '<C-v>', '<C-R>+', { noremap = true, silent = true })
 
   -- Increase/Decrease transparency
-  vim.g.neovide_transparency = 0.9
+  vim.g.neovide_transparency = 1.0 -- 0.9
   vim.keymap.set('n', '<A-=>', function()
     if vim.g.neovide_transparency < 1 then
       vim.g.neovide_transparency = vim.g.neovide_transparency + 0.1
